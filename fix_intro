@@ -1,0 +1,31 @@
+ChemicalBackground.tex:2: The process [however -> Means "in whatever way, to whatever extent" inside a sentence and "nevertheless" at the beginning of a sentence.] is the same as when real chemical elements react.
+
+ChemicalBackground.tex:2: This enables the use of various reaction equations with different rates and therefore different models, that enlarge the range of the experiments [in order to -> to] approximate physical systems.
+
+ChemicalBackground.tex:3: Chemical Reactions} A reaction [is defined as -> is] the interaction of a set of two or more chemical compounds to produce another, different set of [one -> When used as a pronoun, it  must be used consistently: One must manage one's money carefully.] or more chemical compounds.
+
+ChemicalBackground.tex:6: Thus, when [one -> When used as a pronoun, it  must be used consistently: One must manage one's money carefully.] of the concentrations of X and Y runs out, the reaction will stop.
+
+ChemicalBackground.tex:7: From the chemical equation that describes a reaction, a mathematical description [can -> (do not confuse with "may")] be constructed.
+
+ChemicalBackground.tex:7: Since reaction depends on time (because the concentration of Z is increased over time according to a rate r, and X and Y concentrations decreased at the same rate), a chemical reaction [can -> (do not confuse with "may")] be [considered -> Not followed by "as" when it means "believe to be".] as a dynamical [system -> Frequently used without need.].
+
+ChemicalBackground.tex:7: As described in paragraph \ref{dynsys} a dynamical [system -> Frequently used without need.] is defined [by the use of -> by                   ] differential equations.
+
+ChemicalBackground.tex:9: The [system -> Frequently used without need.] has 3 variables, X, Y and Z.
+
+ChemicalBackground.tex:9: Therefore, three equations are needed to describe each [state -> (if used as a verb, restrict to the meaning of "express fully or clearly")] of the [system -> Frequently used without need.] in time.
+
+ChemicalBackground.tex:9: In addition, it is depended on concentrations of X and Y [which -> (use "that" if clause is restrictive)] are decreased in the same rate (for example it is needed [one -> When used as a pronoun, it  must be used consistently: One must manage one's money carefully.] measure unit of both to construct [one -> When used as a pronoun, it  must be used consistently: One must manage one's money carefully.] unit of Z).
+
+ChemicalBackground.tex:9: The equation that gives the [state -> (if used as a verb, restrict to the meaning of "express fully or clearly")] of Z at any time, is:
+
+ChemicalBackground.tex:10: Z = kXYt + Z_0 $$ Likewise, for X and Y with the main difference that those compounds are expend to produce Z, [so -> (do not use as intensifier)] the equations are:
+
+ChemicalBackground.tex:22: For example, if two cells A and B, containing 10 units and 2 units respectively of a chemical X are attached, then the chemical compound X will move from B to A until [there is -> (a dead phrase; rewrite the sentence and it will probably improve)] a balance (6 units each) in that two cell [system -> Frequently used without need.].
+
+ChemicalBackground.tex:23: Fick's law states that the movement of a chemical substance from [one -> When used as a pronoun, it  must be used consistently: One must manage one's money carefully.] cell to another is proportional to the difference of the chemical concentrations of that cell.
+
+ChemicalBackground.tex:26: F = \delta^2K.*(\sum_{i=a}^{A} x_i - Nx_j) \end{equation} A is the set of cells directly attach to cell j N is the size of A (the [number of -> many, several] cells attached to j) [j -> Double word.] is a cell of the [system -> Frequently used without need.] under study and it does not exist in set A $ x_i $ is a vector that contains the concentration of the chemical substances in cell i K is a vector [which -> (use "that" if clause is restrictive)] contains diffusion coefficients for each chemical substance $\delta$ is the size of the sides of the cells The binary operation '.*' means that the vector multiplication is pair-wise (adopted from Matlab semantics\cite{MATLAB_2010}):
+
+25 phrases in 28 sentences found.

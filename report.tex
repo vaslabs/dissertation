@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{a4-mancs}
+\usepackage{pslatex}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{calc}
+\usepackage[greek,english]{babel}
+\usepackage[toc,page]{appendix}
+\usepackage[nottoc]{tocbibind}
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{datetime}
+\DeclareGraphicsExtensions{.png}
+\pagestyle{fancyplain}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\begin{document}
+\input{titlePage}
+\pagenumbering{roman}
+\begin{abstract}
+Alan Turing in 1952 described mathematically how cells can self-organise to form a variety of structures. He called this phenomenon ‘morphogenesis’, which means the creation of shape. Cells communicate with each other by diffusion, a process where chemical compounds or morphogens move from higher to lower concentrations. The project studies various aspects of morphogenesis and analyses several reaction-diffusion mathematical models. The main goal was to translate the simulations of such dynamical systems into descriptive animations of the processes involved. The project exploits morphogenesis exploring the phenomenon of cell mutation. Producing sound from reaction-diffusion mathematical models is also introduced. Finally, the project proposes applications of morphogenesis in engineering achieving the merging of the separate worlds of biology, mathematics, computer science, engineering and arts.
+\paragraph{Title of project:}
+Alan Turing's morphogenesis: on the wonders of nature.
+\paragraph{Author:}
+
+Vasilis Nicolaou
+\paragraph{Supervisor:}
+Eva M. Navarro Lopez
+
+\vfill
+\newdateformat{mydate}{\monthname[\THEMONTH] \THEYEAR}
+\begin{center}
+{\mydate{\today}}
+\end{center}
+\end{abstract}
+
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+I would like to thank my supervisor, Dr. Eva M. Navarro Lopez, for her academic wisdom, her caring manner and her constant help throughout the year which was essential for completing this project.
+
+I also thank my friends and co-students for the funny moments and inspirational conversations throughout a challenging and difficult year.
+
+Last but not least, I thank my family for believing and supporting me throughout my University studies.  
+   
+\end{abstract}
+\tableofcontents
+\listoffigures
+\listoftables
+\listofalgorithms
+\newpage
+\pagenumbering{arabic}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\input{Introduction}
+
+\input{ChemicalBackground}
+
+\input{MathematicalBackground}
+
+\input{Morphogenesis}
+	
+\input{ProgrammingBackground}
+
+\input{Results}
+
+\input{SoftwareDevelopment}
+
+\input{Conclusion}
+
+
+\addtocontents{toc}{\protect\vspace{0.4cm}}
+\nocite{*}
+\bibliographystyle{ieeetr}
+ \bibliography{report}	
+
+\begin{appendices}
+\chapter{Matlab programs}
+\label{App:AppendixA}
+\input{AppendixA}
+\chapter{Java programs} 
+\input{AppendixB}
+\label{App:AppendixB}
+
+\chapter{Bash scripts and gnuplot scripts}
+\label{App:AppendixC}
+\input{AppendixC}
+\end{appendices}
+
+
+
+\end{document}

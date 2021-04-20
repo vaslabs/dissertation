@@ -1,0 +1,50 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Morphogenesis}{1}
+\contentsline {section}{\numberline {1.2}Project Proposal}{1}
+\contentsline {section}{\numberline {1.3}Approach}{2}
+\contentsline {section}{\numberline {1.4}Results}{2}
+\contentsline {section}{\numberline {1.5}Report Structure}{2}
+\contentsline {chapter}{\numberline {2}Mathematical Background}{3}
+\contentsline {section}{\numberline {2.1}Dynamical Systems}{3}
+\contentsline {subsection}{\numberline {2.1.1}Non-Linear Systems}{3}
+\contentsline {subsubsection}{Analysis}{4}
+\contentsline {subsubsection}{Simulation}{4}
+\contentsline {subsection}{\numberline {2.1.2}Linear Systems}{4}
+\contentsline {subsubsection}{Examples}{4}
+\contentsline {subsubsection}{Linearisation process}{4}
+\contentsline {section}{\numberline {2.2}Euler's Method}{5}
+\contentsline {chapter}{\numberline {3}Chemical Background}{6}
+\contentsline {section}{\numberline {3.1}Reaction}{6}
+\contentsline {section}{\numberline {3.2}Diffusion}{7}
+\contentsline {subsection}{\numberline {3.2.1}Example-Diffusion in a ring of cells}{7}
+\contentsline {chapter}{\numberline {4}Programming Background}{8}
+\contentsline {section}{\numberline {4.1}Matlab}{8}
+\contentsline {subsection}{\numberline {4.1.1}Modelling morphogenesis}{9}
+\contentsline {subsection}{\numberline {4.1.2}Integrating ordinary differential equations}{9}
+\contentsline {subsubsection}{ode45}{9}
+\contentsline {subsubsection}{Numerical Stability}{10}
+\contentsline {subsection}{\numberline {4.1.3}Plotting}{10}
+\contentsline {subsubsection}{The plot function}{11}
+\contentsline {subsection}{\numberline {4.1.4}Creating Movies}{11}
+\contentsline {subsubsection}{Creating the images}{11}
+\contentsline {subsection}{\numberline {4.1.5}Playing Sound}{12}
+\contentsline {section}{\numberline {4.2}Java}{12}
+\contentsline {subsection}{\numberline {4.2.1}Implementing Euler's method}{12}
+\contentsline {subsection}{\numberline {4.2.2}Process management}{12}
+\contentsline {subsection}{\numberline {4.2.3}Scheduling problem}{13}
+\contentsline {subsubsection}{Random Scheduler}{13}
+\contentsline {subsubsection}{Round Robin Scheduler}{14}
+\contentsline {subsubsection}{Priority scheduling}{14}
+\contentsline {subsubsection}{Diffusion inspired scheduler}{14}
+\contentsline {section}{\numberline {4.3}Model simulations}{15}
+\contentsline {subsection}{\numberline {4.3.1}Methdodology}{15}
+\contentsline {subsubsection}{Code Structure}{15}
+\contentsline {subsubsection}{Testing}{15}
+\contentsline {subsubsection}{Documentation}{15}
+\contentsline {section}{\numberline {4.4}Process Scheduling}{16}
+\contentsline {subsection}{\numberline {4.4.1}Methodology}{16}
+\contentsline {subsection}{\numberline {4.4.2}Code structure}{16}
+\contentsline {subsubsection}{Software Design Patterns}{16}
+\contentsline {subsection}{\numberline {4.4.3}Testing}{17}
+\contentsline {section}{\numberline {4.5}Scripts and tools}{17}

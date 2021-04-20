@@ -1,0 +1,58 @@
+\chapter{Introduction}
+
+	\section{Morphogenesis}
+
+	Morphogenesis is the biological process that defines how a system of cells is organised and shaped. The word originates from the Greek words `\greektext morf'h\latintext ' which means shape and `\greektext g'enesic\latintext ' which means birth. Alan Turing in his paper `The chemical basis of morphogenesis' gives a mathematical model that can approximate how an embryo develops its various organs \cite{turing_chemical_1990}. 
+	
+    The challenge was to show how from a single cell that replicates into identical cells, various organs are developed with different functionalities. For example, in a human embryo, there is initially a single cell that was produced from half the characteristics of the mother and half of the father. Eventually, millions of cells are generated. Nevertheless, they manage to differentiate into groups that form parts of different organs. 
+	
+Turing defined a hypothetical chemical substance called morphogen. A morphogen is an abstract term which represents a chemical compound that gives the cell certain properties according to its concentration. A cell, therefore, may be defined as a vector of morphogens that react together forming the state of a cell. In addition, each cell has several neighbouring/adjacent cells. 
+
+When cells with different concentrations of chemical compounds are connected, the phenomenon of diffusion is observed. The membrane of a cell has a property that allows chemical substances to move from higher to lower concentrations. This is how cells communicate. Diffusion is further explained in Section \ref{diffusion}.
+	
+By constructing mathematical equations that approximate chemical reactions and diffusion, one can define models that approximate the phenomenon of morphogenesis. Such models are described in Chapter \ref{morphogenesis}.
+
+	\section{Project objectives}
+	
+    This project studies the idea of morphogenesis that Alan Turing proposed and subsequently produces software applications that simulate various models of the reaction-diffusion biological process. The simulations combine graphs that may be used for analysis or testing and movies\footnote{Movies are available at: \url{http://www.youtube.com/watch?v=2JppD_Mw_3k}} that show how cells are  organised forming structural patterns. Simulations also visualise the effects of cell mutations, processed as random changes in morphogen concentrations after a system develops a structured shape.
+
+    The project goes a step further and introduces applications of morphogenesis in engineering. A process scheduling algorithm inspired by the reaction-diffusion concept has been developed and compared to traditional schedulers such as the Round Robin. The idea of how a scheduler is related to morphogenesis is not obvious and is described in section \ref{schedulers}.
+	
+    Some experiments study the possibility of producing sound by the use of mathematical models that produce continuous oscillations. Due time limitations, experiments are not extensive and no meaningful sound output was produced. However, readers and future researches of the subject are encouraged into further study of such experiments, since graphs present a behaviour similar to sound waves.  
+
+	
+    \section{Background}
+    \input{Background}
+
+	\section{Approach}
+
+The approach was partitioned in several stages. Since the project has a strong mathematical component, background knowledge of the mathematical concepts that were involved are presented. The information on the mathematical knowledge that is required  is given by Alan Turing in his paper \cite{turing_chemical_1990}. To sum up, this subject merges ordinary differential equations, integration methods, algebra and computational theory.
+
+Application of mathematical concepts from dynamical systems theory is required to build an understanding on how software applications of mathematical models are developed. Since the main tool to implement such models was Matlab, suitable software design methodologies were identified to facilitate a concrete development of the software applications.
+
+An agile development methodology was followed \cite{larman_applying_2004}. A basic application was built at an early stage. This enabled concurrency in researching and programming which resulted in identifying and implementing features, re-factoring code and fixing bugs, achieving the implementation of the variety of applications to be well defined, maintainable and reasonably documented.   
+
+In brief, the project is researched based, involving various concepts from chemistry, biology, mathematics and software design. The absence of requirement gathering from users enabled the intense research and tutorial discussions to embrace the study of various ideas that were presented throughout the life-cycle of the project. 
+
+\section{Summary of results}
+
+Results are separated into categories according to the purpose of each application. Information about chemical reactions and diffusion is provided. The data from the applications and experiments that took place are discussed. After that, various mathematical models are simulated for studying their parameters and how the latter affect their behaviour. Finally, experimental ideas that involve cell mutation, sound producing and process scheduling using diffusion are introduced.
+
+The presentation of results shows at which circumstances cells form structures and how different shapes are produced by altering the parameters of a model or by using different models. Furthermore, perturbations are introduced in the form of cell mutations and explore whether the structure of the system is altered. Finally, the possibility of producing sound is introduced along with a study on how morphogenesis might be applied in computer science as a nature inspired algorithm.     		
+
+%TODO add info	
+\section{Report structure}
+The report consists of three parts.
+\begin{enumerate}
+\item The background information for the reader to build the basic concepts involved in this project.
+\item The applications that were implemented and the results obtained in each stage of the project.
+\item The development process and methodologies that were followed to build the software artifacts. Thus, offering a point of reference to the reader for building extensions or similar solutions.
+\end{enumerate}
+
+The main morphogenesis models are supplied in Chapter \ref{morphogenesis}. Those are the L-systems equations, the Gray-Scott model and the Gizburg-Landau model. The background information provides all the necessary knowledge on the concepts that are studied by the project. The mathematical background is the most important and advanced topic, since all the biochemical related issues, such as the chemical reactions and cell diffusion are described by differential equations. Thus, Chapter \ref{biochemical} consists of basic information about how chemical compounds react and what assumptions are made for both chemical reactions and diffusion when defining a mathematical model that approximates such behaviours. Finally, the programming background is given, with information on Matlab and Java, including key features of each language and pseudo-code of the algorithms that were implemented.
+
+The development process that is discussed in Chapter \ref{progB} gives the methodology used to implement each software application and help in reading the code for the purpose of maintaining or expanding it. It also includes information about testing and visualising data by using script languages that enable automation and minimise the amount of time spent by combining plotting and testing.
+
+Results are given in Chapter \ref{results} and are presented in a way that reflects the progress of the project, starting from the study of chemical reactions and cell diffusion and then progressing to complete mathematical models of morphogenesis. At the end, the results of experimenting with process management combined with morphogenesis are supplied. Results include images that show snapshots of how the reaction-diffusion process evolves in time. Graphs showing the numerical state of a system or statistics about comparison of algorithms are also given.   
+
+Finally, the appendices contain the important code implementations of the project. Since various papers on morphogenesis \cite{heineike_modeling_2002}\cite{kassam_solving_2003} contain examples of their code artifacts, it is important that alternative solutions are given. 

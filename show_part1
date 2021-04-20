@@ -1,0 +1,4 @@
+#!/bin/bash
+send_command play
+/opt/matlab/bin/matlab -r "cd Desktop/project' files'/Reaction-diffusion' L-systems model'/; reaction_diffusion_model"
+

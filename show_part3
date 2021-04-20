@@ -1,0 +1,2 @@
+#!/bin/bash
+firefox "file:///home/S10/nicolav0/Desktop/project files/Reaction-diffusion L-systems model/doc/index.html"

@@ -1,0 +1,238 @@
+\chapter{Mathematical concepts}
+This chapter gives information about the mathematical concepts that were used during this project. A basic knowledge of ordinary differential equations (ODE's) and matrix algebra is needed. Main concepts such as dynamical systems are explained.  Linear and non-linear systems are also discussed, including the linearisation technique.  
+\section{Dynamical systems}
+\label{dynsys}
+
+A dynamical system gives a functional description of a solution which varies in time. 
+Mathematically a dynamical system is a function $ f(t,x) \forall  t \in \mathbb{R} $ and $ x \in \mathrm{E} \subset \mathbb{R}^n $, that describes how points $ x \in E $ change with respect to time \cite[p.~182]{perko_differential_2001}.
+
+A mathematical definition to the problem based on dynamical systems is needed in order to construct the mathematical model that describes the behaviour of the phenomenon of Morphogenesis. 
+    
+Morphogenesis is the process that gives shape to biological organisms. Mathematically a biological system may be defined as a set of cells which contain a set of morphogens. Thus, a cell is defined as a vector containing real values that represent the morphogen concentrations. Therefore, the functional model will be defined as a matrix of N vectors of size M, where N is the number of cells and M is the number of morphogens that each cell contains. This is shown in Table \ref{mathbiol}.
+
+    \begin{table}[h!]
+        \begin{center}
+    \caption{Mathematical representation of biological elements.}
+        \begin{tabular}{| l | p{6cm} | p{3cm} |}
+        \hline
+        Biological element & Mathematical Representation & Mathematical Definition \\ \hline
+        Morphogen & A real value variable that represents 
+the concentration of the morphogen & $ X \in \mathbb{R} $ \\ \hline      
+        Cell & Vector of size M equal to the number of morphogens that it contains & $ x \in \mathbb{R}^{M} $ \\ \hline 
+        Physical System & A matrix of size N equal to the number of cells
+that contains $ \mathit{M} $ 1-dimensional vectors of real values & $ S \in \mathbb{R}^{N \times M} $ \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \label{mathbiol}
+    \end{table}
+	
+\subsection{Non-linear systems}
+The purpose of a mathematical model is the aid to the study of physical systems. It should be noted, that any mathematical model gives an approximate solution of the physical system it describes. Therefore, the accuracy of any mathematical model is measured by the closeness of that model to the behaviour of that physical system. Such models are constructed by a set of non-linear differential equations.
+
+This project focuses on the study of known mathematical models by analysing and simulating their behaviour. Thus, some concepts of ordinary differential equations, integration algorithms and numerical stability theory are required.
+
+The format of non-linear functions studied in this project is:
+$$ \frac{dx}{dt}=F(x(t))=F(x_1, ..., x_n) $$
+Where:
+\begin{itemize}
+\item x is a vector of size n.
+\item n is the number of morphogens.
+\item F is a non-linear function.
+\end{itemize}
+
+Such systems approximate the internal chemical reactions in each cell. To have a complete reaction-diffusion model, the diffusion equation is added to the non-linear equations. Then the mathematical model becomes:
+\begin{equation}
+\label{morphogenesisgeneralequation}
+\frac{dx_i}{dt}=F(x_i(t))=F(x_i) + \delta(\sum_{j=a}^{A} x_j - Nx_i)
+\end{equation}
+
+$ \forall i \in \mathtt{Cells} $.
+
+The construction of the diffusion equation is described in Section \ref{diffusion}.
+\subsubsection{Analysis}
+There are two basic ideas concerning the analysis of non-linear systems; stability and oscillation. Stability is associated with the behaviour of the system around the equilibrium points. The main interest is to penetrate the system with small or large perturbations at its equilibrium points and observe if its state changes \cite{aggarwal_notes_1972}. Such perturbations are introduced in the form of mutation by altering the morphogen concentrations with random values. Other mutations of great interest involve altering the parameters or the diffusion coefficients in the models of morphogenesis.
+
+In terms of oscillating, the aim is to detect if the system shows an oscillatory behaviour and analyse what properties that oscillation has: periodic/aperiodic, frequency, amplitude and how long does it take for the system to stop oscillating and reach an equilibrium state \cite[p. ~7]{aggarwal_notes_1972}.
+
+\subsubsection{Simulation}
+Simulation means that the mathematical model is integrated in time and the results are shown visually. Graphs, bar charts and finally movies show a representation of how cells are organised into shaped structures by converting the morphogen concentrations into colours.
+
+The integration of such models is done by programming in Matlab and the Java programming language. In order to develop solutions -in respect to mathematical models- in Matlab and Java, knowledge of integration algorithms and numerical stability is required. 
+
+The goal of the simulations is not only to show graphically how the state of a system changes, but also to prove that cells create shapes and ordered structures out of a chaotic and random initial state, according to the mathematical model that describes such a system.
+
+Summarising, the simulations result from the integration of ordinary differential equations that define the mathematical model under study and then converting the solution into human understandable visualisations.
+
+\subsection{Linear systems}
+\label{linsys}
+This project also studies linear systems of ordinary differential equations of the form:
+$$ \dot{x} = Ax = A\begin{pmatrix}
+            \dot{x}_1 \\
+            \vdots \\
+            \dot{x}_n \\
+            \end{pmatrix}
+$$
+where $ A \in \mathbb{R}^{n \times n} $ and $ x \in \mathbb{R}^n$.
+
+In general, a linear system can be viewed as
+$$ \dot{x} = F(x) $$
+where $ F(x) $ is a linear function. The reason behind the transformation to $ \dot{x} = Ax $ is to exploit the properties of any linear function.
+Those are the superposition property
+$$ F(x + y) = f(x) + f(y) $$
+and the homogeneity
+$$ F(ax) = aF(x) $$
+By substituting F(x) by Ax it is directly shown that those properties are satisfied since:
+$$ F(x) = Ax =
+\begin{pmatrix}
+a_{11}x_1 + \hdots + a_{1n}x_n \\
+\vdots \\
+a_{n1}x_1 + \hdots + a_{nn}x_n \\
+\end{pmatrix}
+= \begin{pmatrix}
+    a_{11}x_1 \\
+    \vdots \\
+    a_{n1}x_1 \\
+   \end{pmatrix} + \hdots + \begin{pmatrix}
+    a_{1n}x_n \\
+    \vdots \\
+    a_{nn}x_n \\
+   \end{pmatrix} = c\begin{pmatrix}
+a'_{11}x_1 + \hdots + a'_{1n}x_n \\
+\vdots \\
+a'_{n1}x_1 + \hdots + a'_{nn}x_n \\
+\end{pmatrix}
+$$
+
+
+\subsubsection{Linearisation process}
+
+
+It is possible to approximate a non-linear system around its equilibrium points by exploiting a property that most non-linear systems have. That property states that in the neighbourhood of equilibrium solutions, non-linear systems behave as the linear system that approximates them. This means that a similar behaviour may be retrieved (for example, oscillatory behaviour with certain amplitude and frequency), but the numerical values do not represent the values that the non-linear system would have at that certain points in time. For example, the results of linear systems in Section \ref{resLinear} show that there are negative values representing chemical concentrations. This is not a problem, since only the behaviour is studied when approximating a system by linearisation.
+
+The equilibrium points of the system are the values of vector $x \in \mathbb{R}^n $ at which $ \frac{dx}{dt}=0 $. When all the derivatives of a system are evaluated to 0 then the system is unable to change as time passes, since the integration step will always add zero. Exceptions are not studied.   
+
+The linearisation technique process as given from Florin Diacu \cite[p.~227]{diacu_differential_2000} is:
+\begin{enumerate}
+\item Shift equilibrium points to the origin, and define new variables, such as:
+$$ u=x-x_0 $$
+\item Substitute the variables of the system with the new variables $ u $ from step 1 and obtain the equations for $(\dot{u}_1,  \hdots, \dot{u}_n)^T$.
+\item Define G as the new form of the vector field such that 
+$$ 
+\dot{u}=G(u)
+$$
+The origin is an equilibrium such that:
+$$G(0) = 0$$ 
+
+The partial-derivative matrix A is formed as:
+
+$$ A=\begin{pmatrix}
+     \frac{\partial G_1}{\partial u_1}|_{u=0} & \hdots & \frac{\partial G_1}{\partial u_n}|_{u=0} \\
+     \vdots & \ddots & \vdots \\
+    \frac{\partial G_n}{\partial u_1}|_{u=0} & \hdots & \frac{\partial G_n}{\partial u_n}|_{u=0} \\
+    \end{pmatrix}
+$$
+
+\item Apply the derivatives shown in the corresponding matrix A (step 3) in terms of $u_i$.
+\end{enumerate}
+
+\paragraph{Example}
+
+Let the non-linear system be:
+\begin{equation}
+\label{xoneeq}
+\dot{x}_1 = (x_1 - 3)(x_2 - 1)
+\end{equation}
+
+\begin{equation}
+\label{xtwoeq}
+\dot{x}_2 = (x_1 + 2)(x_2+5) 
+\end{equation}
+The first step is to find the equilibrium point where $ \dot{x}_1 = \dot{x}_2 = 0 $ .
+It is easily observable that with $ x_1=-2 $ and $ x_2=1 $ then 
+\begin{equation}
+\label{eqp}
+\dot{x}_1 = \dot{x}_2 = 0
+\end{equation}
+
+A linearised system can approximate the behaviour of a non-linear system near the equilibrium points in (\ref{eqp}). Thus, an isolated equilibrium should be used to shift the equilibrium points to the origin.
+
+To achieve this, define:
+\begin{equation}
+\label{subseq}
+u = x - x_0
+\end{equation}
+$ x_0 $ being the equilibrium points of the system.
+
+Equation (\ref{subseq}) is the general form to work with the two variables of the system. Applying (\ref{subseq}) on (\ref{xoneeq}) and (\ref{xtwoeq}), the two shifting variables are obtained:
+
+\begin{equation}
+\label{uoneeq}
+u_1 = x_1 + 2
+\end{equation}
+
+\begin{equation}
+\label{utwoeq}
+u_2 = x_2 - 1
+\end{equation}
+
+
+Using (\ref{uoneeq}) and (\ref{utwoeq}) 
+on (\ref{xoneeq}) and (\ref{xtwoeq}) 
+the new system with the altered coordinates is obtained:
+
+\begin{center}
+$ \dot{u}_1 = \dot{x}_1 $ and $ \dot{u}_2 = \dot{x}_2 \iff $
+\end{center}
+$$ \dot{u}_1 = -5u_2 + u_1u_2, $$
+$$ \dot{u}_2 = 6u_1 + u_1u_2 $$
+with
+$$
+G=\begin{pmatrix}
+\dot{u}_1 \\
+\dot{u}_2 \\
+\end{pmatrix}
+$$
+
+
+Following the steps 3 and 4 of the linearisation technique, the real values of the corresponding matrix A are computed:
+$$ A=\begin{pmatrix}
+     \frac{\partial G_1}{\partial u_1}|_{u=0} & \frac{\partial G_1}{\partial u_2}|_{u=0} \\
+    \frac{\partial G_2}{\partial u_1}|_{u=0} & \frac{\partial G_2}{\partial u_2}|_{u=0} \\
+    \end{pmatrix} =
+\begin{pmatrix}
+     \frac{\partial (-5u_2+u_1u_2)}{\partial u_1}|_{u=0} & \frac{\partial (-5u_2 + u_1u_2)}{\partial u_2}|_{u=0} \\
+    \frac{\partial (6u_1 + u_1u_2)}{\partial u_1}|_{u=0} & \frac{\partial (6u_1 + u_1u_2)}{\partial u_2}|_{u=0} \\
+    \end{pmatrix} \Rightarrow
+A=\begin{pmatrix}
+0 & -5 \\
+6 & 0
+\end{pmatrix} 
+$$
+
+The linearized system around $ (u_1, u_2)=(0,0) $ is $ \dot{u} = Au $, with 
+$$ u = \begin{pmatrix}
+u_1 \\
+u_2 \\
+\end{pmatrix} $$
+This system, approximates the behaviour of the non-linear system defined by the equations (\ref{xoneeq}) and (\ref{xtwoeq})
+
+\section{Numerical stability}	
+    A system is numerically unstable when its state grows uncontrollably to infinity. 
+Instability  may occur for three reasons.
+    \begin{enumerate}
+    \item The system is unstable.
+    \item The system is unstable for the particular initial conditions and parameters.
+    \item Integration flaws of the ODE solver show that the system is unstable when it is not.
+    \end{enumerate}
+    
+The interest of this project lies on reasons 2 and 3. This is because the construction of a mathematical model does not concern this project, and thus, already proposed mathematical models are used.
+
+Numerical stability is a very important aspect to consider when using an ODE solver algorithm. Depending on the stiffness of the differential equations, a decision for the length of the time step must be made. The decision of the time step is crucial when having oscillating systems. This is due to the fact that, if the time step is not small enough and the amplitude grows with large errors on each step then the amplitude of that oscillation will grow to infinity resulting in an unstable system.
+
+In order to have a better understanding of why it is important to decide on the right time-step, consider the following situation: Think of a labyrinth with arbitrary length paths and walls of arbitrary width. Someone wants to pass through the labyrinth by making steps of arbitrary size. After a step, he observes if he arrived at a wall-end. If the step is big, it could pass mistakenly through a wall, without noticing (in a virtual world) or crash at it (in a real world). How should the decision be made about the right size of the step?
+The example here is of a step in space, but the problem is of the same nature: if the step is big, the solver will present a wrong or unstable behaviour.
+
+On the other hand, having a very small step, increases the time that an ODE solver needs to complete the integration. In the labyrinth example, doing the smallest possible step each time to avoid wall collision, will result in a correct solution, but the time complexity would be huge. A dynamic approach, however, introduces variations on the time steps. An algorithm that changes the time step is called implicit and an algorithm that uses a constant time step is called explicit. Most Matlab ODE solvers use an implicit approach of the Runge-Kutta family algorithms \cite{MATLAB_2010}, reducing the time-steps when, for example, oscillations have low amplitude. 
+
+The Java implementation uses the explicit implementation of the Euler method since the range of the numbers is known, as the time slices that are given to a process by a scheduler are fixed. In addition, float point underflows are avoided by comparing the time slice given to a process with the smallest execution time-step a process is allowed to make.

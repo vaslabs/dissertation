@@ -1,0 +1,92 @@
+\chapter{Models of morphogenesis}
+\label{morphogenesis}
+
+This project studies already-known reaction-diffusion models to produce different patterns and explore various ideas and concepts. The Gray-Scott model and the L-Systems equations are the core of the visualisation applications. The applications integrate those models and then by mapping the computed values into colours, images are generated and show the process of the cells producing a wide variety of structures.
+
+\section{The Gray-Scott model}
+The Gray-Scott model describes a reaction-diffusion system \cite{mcgough_pattern_2004}. The original model involves partial derivatives and is given by the two partial differential equations:
+
+$$\dot{u} = d_u\bigtriangledown u - uv^2 + F(1-u),$$
+\begin{equation}
+\label{grayscott}
+\dot{v} = d_v\bigtriangledown v + uv^2 - (F+k)v
+\end{equation}
+Where:
+\begin{itemize}
+\item u and v represent the morphogen concentrations.
+
+\item $ d_u $ and $ d_v $ are the diffusion coefficients of the morphogens u and v respectively.
+
+\item F and k are real constant values which represent the reaction rate.
+
+\item $\bigtriangledown$ is the laplacian operator of u for calculating diffusion in Euclidian space \cite{heineike_modeling_2002}.
+\end{itemize}
+
+
+The analysis given by Benjamin M. Heineike in \cite{heineike_modeling_2002} finds several parameter ranges and values to produce several patterns. The equations were modified for the purposes of this project; the laplacian of the concentrations in respect to space was substituted by a linear diffusion equation as described in Section \ref{diffusion}. Reaction functionsremain exactly the same as defined by Gray-Scott in equations (\ref{grayscott}).
+
+$$U + 2V \underset{~F} \to 3V,$$
+\begin{equation}
+\label{gsreaction}
+V \underset{F+k} \to P
+\end{equation}
+
+Thus, from equation (\ref{grayscott}), replacing the laplacian operator by the diffusion equation (\ref{diffgeneq}) the model becomes:
+
+
+$$\dot{u}_j = d_u((\sum_{i=a}^{A} u_i - Nu_j)) - u_jv_j^2 + F(1-u_j),$$
+\begin{equation}
+\label{ficksgrayscott}
+\dot{v}_j = d_v(\sum_{i=a}^{A} v_i - Nv_j) v + uv^2 - (F+k)v_j,
+\end{equation}
+$$\forall j \in Cells $$
+
+Where:
+\begin{itemize}
+\item A is the set of adjacent cells to the current cell j. 
+\item N is the number of elements of the set A. 
+\end{itemize}
+If, for example, the structure of the cell interconnections is a ring then the equations (\ref{ficksgrayscott}) become:
+
+
+$$\dot{u}_i = d_u(u_{leftof(i)} - 2u_i + u_{rightof(i)}) - u_iv_i^2 + F(1-u_i),$$
+\begin{equation}
+\label{ficksgrayscottring}
+\dot{v}_i = d_v(v_{leftof(i)} - 2v_i + v_{rightof(i)}) + u_iv_i^2 - (F+k)v_i,
+\end{equation}
+$$ \forall i \in Cells $$
+
+The aim is to test the model with different parameters that were introduced by Benjamin M. Heineike \cite{heineike_modeling_2002} and discover if the Gray-Scott reaction function can be combined with diffusion, according to the conduction of heat as proposed by Alan Turing \cite{turing_chemical_1990}, to generate patterns. The results are presented in Section \ref{resnonlinear}. 
+ 
+\section{The L-Systems equations}
+
+The L-Systems equations are proposed by Christopher G. Jennings \cite{website:jennings}. His work involves a Java applet that generates patterns. Examples of such patterns involve cheetah skin patterns and fingerprints. The Java applet uses the explicit Euler's method to integrate the reaction equations and the diffusion. The reaction equations are:
+
+
+$$\dot{u} = uv - u - 12,$$
+\begin{equation}
+\label{lsystems}
+\dot{v} = 16 - uv
+\end{equation}
+
+The same concepts were used and expanded into testing different ideas. The first idea was to create patterns by applying  different colour mappings and image processing techniques. The second was to study how cell mutation can affect the normal structure of the system. Another aspect was to observe if the Euler's method used in \cite{website:jennings} was indeed accurate and what were the limitations in terms of the produced patterns and the numerical computations.
+
+Results are shown in paragraph \ref{resnonlinear} comparing the L-Systems equations to the Gray-Scott reaction function.
+
+\section{The Gizburg-Landau model}
+
+The Gizburg-Landau model consists of only one equation. Its continuous oscillatory behaviour makes it ideal for studying the possibility of producing sound. Unfortunately, time limitations did not enable research into finding a suitable way for mapping morphogen concentrations to sound spectra. Nevertheless, it might be possible to generate sound since the graphs that were generated look very similar to sound wave patterns. Such a graph is shown in paragraph \ref{glsound}.
+
+The equation is:
+\begin{equation}
+\label{gizburglandau}
+\dot{u} = (1+ib) \bigtriangledown^2u-(1+ia)u|u|^2
+\end{equation}
+Where: 
+\begin{itemize}
+\item u is a vector of cells (each containing a single morphogen).
+\item a and b are real constants. 
+\item i is the imaginary unit. 
+\end{itemize}
+
+The equation (\ref{gizburglandau}) is a partial differential equation. The solution is given by Aly-Khan Kassam \cite{kassam_solving_2003}. The aim was to find the correct mapping to exploit the long wave oscillation and consequently produce sound patterns.

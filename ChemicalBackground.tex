@@ -1,0 +1,92 @@
+\chapter{Biochemical concepts}
+\label{biochemical}
+An elementary level of knowledge in chemistry is needed to understand the concepts that are discussed in this report. As mentioned previously, the reactions do not include real chemical elements, but rather some abstract compounds called morphogens. The process however, is the same as when real chemical elements react. This enables the use of various reaction equations with different rates and therefore different models, that widen the range of the experiments in order to approximate physical systems.
+\section{Chemical reactions}
+A reaction is defined as the interaction of a set of two or more chemical compounds to produce another, different set of one or more chemical compounds. The equation to describe such a process is:
+\begin{equation}
+\label{simplereaction}
+X + Y \underset{r} \to Z
+\end{equation}
+
+Equation (\ref{simplereaction}) means, that the chemical compound X is reacting with the compound Y and both produce Z at a rate r. Thus, when one of the concentrations of either X or Y runs out, the reaction stops.
+From the chemical equation that describes a reaction, a mathematical description may be constructed. Since reaction depends on time (the concentration of Z is increased over time according to a rate r, X and Y concentrations are decreased at the same rate), a chemical reaction should be considered as a dynamical system. As described in section \ref{dynsys} a dynamical system is defined by ordinary differential equations. 
+
+The system of equation (\ref{simplereaction}) has 3 states, X, Y and Z. Therefore, three equations are needed to describe each state of the system in time. Z is produced at a rate r. In addition, concentrations of X and Y that are decreased in the same rate (for instance, one unit of both X and Y is needed to produce one unit of Z). The equation that gives the state of Z at any time, is: 
+
+\begin{equation}
+\label{Zreaction} 
+Z = rXYt + Z_0
+\end{equation}
+Likewise for X and Y with the main difference that those compounds are expended to produce Z, so the equations are:
+\begin{equation}
+\label{Xreaction}
+X = -rXYt + X_0
+\end{equation}
+\begin{equation}
+\label{Yreaction}
+Y = -rXYt + Y_0
+\end{equation}
+
+$ Z_0, X_0 $ and $ Y_0 $ are the initial concentrations of each chemical substance and $r$ is the parameter that represents the reaction rate. Differentiating equations (\ref{Zreaction}), (\ref{Xreaction}) and (\ref{Yreaction}) the mathematical model is obtained as:
+$$ \frac{dZ}{dt} = rXY $$
+$$ \frac{dX}{dt} = -rXY $$
+$$\frac{dY}{dt} = -rXY$$
+
+\section{Cell diffusion}
+\label{diffusion}
+Diffusion is the process where chemical substances move from their higher to lower concentrations. For example, if two cells A and B are attached, containing 10 units and 2 units respectively of a chemical X, then the chemical compound X will move from A to B until the chemical concentrations are balanced (6 units each). Turing suggested in his paper that the diffusion occurs similarly with the conduction of heat \cite[p.~40]{turing_chemical_1990}. By replacing the conduction with diffusion, Turing gave the equation of diffusion in a ring of cells \cite[p.~47]{turing_chemical_1990} from which a general equation of diffusion can be extracted as shown in equation (\ref{diffgeneq}). The latter helps in experimenting with cells that have any number of cells attached to them.
+
+\begin{equation}
+\label{diffgeneq}
+F = \delta^2K.*(\sum_{i=a}^{A} x_i - Nx_j)
+\end{equation}
+
+Where:
+\begin{itemize}
+\item A is the set of cells that are directly attached to cell j,
+\item N is the size of A (the number of cells attached to j),
+\item j is a cell of the system under study and it does not exist in set A,
+\item $ x_i $ is a vector that contains the concentration of the chemical substances in cell i,
+\item K is a vector which contains diffusion coefficients for each chemical substance, 
+\item $\delta$ is the size of the sides of the cells.
+\end{itemize}
+The binary operation `.*' means that the vector multiplication is pair-wise (adopted from Matlab semantics \cite{MATLAB_2010}). That is:
+$$ 
+ \begin{pmatrix}
+  a\\
+  b\\
+ \end{pmatrix}.*
+ \begin{pmatrix}
+  c\\
+  d\\
+ \end{pmatrix} =
+ \begin{pmatrix}
+  ac\\
+  bd\\
+ \end{pmatrix}
+$$
+
+Turing considers the scenario of cells connected in a ring communicating with diffusion. 
+That means that every cell is connected to another two cells as shown in Figure \ref{ringCells}. Therefore, the equation becomes:
+\begin{equation}
+\label{diffeq}
+F_{ring}=\delta^2*K.*(x_{i-1}-2x_i+x_{i+1})
+\end{equation}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{ringofcells.png}
+\caption{Interconnection of cells in a ring-shaped structure.}
+\label{ringCells}
+\end{figure}
+
+Diffusion in a torus is also considered in order to tackle the problem that arises by working on a surface structure. For instance, consider a 2-dimensional matrix. The cells on the edges are connected with three other cells. If a cylinder connection is made, that leaves the top and bottom cells to be connected with only three other cells and all others to be connected with four. The solution is to connect every cell on an edge with a cell in the other edge-end. This forms the shape of torus shown in Figure \ref{torus}. Another advantage by the use of a torus structure is that it allows a straightforward way of converting a surface of cells into an image, since it is easily representable by using 2-dimensional computer graphics.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{torus.png}
+\caption{2-dimensional surface wrapped in a torus-shaped structure.}
+\label{torus}
+\end{figure}
+
+%TODO mutation
